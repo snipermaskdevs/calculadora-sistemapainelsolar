@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Rentabilidade Solar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Calculadora de Rentabilidade de Energia Solar</h1>
+        <p>Informe seus dados para calcular o retorno do investimento em energia solar.</p>
+    </header>
+
+    <div class="container">
+        <form id="solarCalculator">
+            <label for="consumo">Consumo Mensal de Energia (kWh):</label>
+            <input type="number" id="consumo" name="consumo" required>
+
+            <label for="localizacao">Localização Geográfica:</label>
+            <select id="localizacao" name="localizacao" required>
+                <option value="norte">Norte</option>
+                <option value="sul">Sul</option>
+                <option value="leste">Leste</option>
+                <option value="oeste">Oeste</option>
+            </select>
+
+            <label for="telhado">Tamanho do Telhado (m²):</label>
+            <input type="number" id="telhado" name="telhado" required>
+
+            <button type="submit">Calcular Rentabilidade</button>
+        </form>
+
+        <div id="resultados">
+            <h3>Resultados</h3>
+            <p><strong>Número de Painéis Solares Necessários:</strong> <span id="painel"></span></p>
+            <p><strong>Economia Anual Estimada:</strong> <span id="economia"></span></p>
+            <p><strong>Tempo de Retorno do Investimento:</strong> <span id="payback"></span></p>
+
+            <div id="explicacao">
+                <p><strong>Como funciona o cálculo:</strong></p>
+                <p><strong>Número de Painéis Solares Necessários:</strong> Este valor é calculado com base no consumo mensal de energia, levando em consideração a produção média de energia por painel solar, que pode variar conforme a localização.</p>
+                <p><strong>Economia Anual Estimada:</strong> A economia anual é calculada multiplicando o consumo de energia mensal pela tarifa de energia e o número de meses no ano.</p>
+                <p><strong>Tempo de Retorno do Investimento:</strong> O payback é o tempo estimado para recuperar o valor investido na instalação dos painéis solares. Este é calculado dividindo o custo de instalação pela economia anual.</p>
+            </div>
+        </div>
+
+        <!-- Nova seção: Dicas sobre Energia Solar -->
+        <div id="dicas">
+            <h3>Dicas para Instalar Energia Solar</h3>
+            <ul>
+                <li><strong>Verifique a orientação do telhado:</strong> Telhados voltados para o norte recebem mais luz solar durante o dia.</li>
+                <li><strong>Considere um sistema de monitoramento:</strong> Isso ajuda a controlar o desempenho do seu sistema solar.</li>
+                <li><strong>Consulte um especialista:</strong> Um engenheiro solar pode ajudar a dimensionar corretamente o sistema para sua casa.</li>
+            </ul>
+        </div>
+        
+        <!-- Nova seção: Cálculo de Custo de Instalação -->
+        <div id="custoInstalacao">
+            <h3>Estimativa de Custo de Instalação</h3>
+            <p>O custo de instalação de um sistema solar pode variar dependendo da área e do tipo de equipamento. Como uma estimativa, o custo por metro quadrado de telhado é de R$100.</p>
+            <p><strong>Custo Estimado de Instalação: </strong> R$ <span id="custoInstalacaoValor"></span></p>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
